@@ -7,30 +7,83 @@
   <title>Candy Code 🍭💻</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff0f6;
+      background: linear-gradient(to bottom, #fff0f6, #ffe6f0);
       color: #333;
       text-align: center;
     }
 
     header {
-      background: #ff4da6;
+      background: linear-gradient(90deg, #ff4da6, #ff80c0);
       color: white;
-      padding: 20px;
-      font-size: 24px;
+      padding: 25px;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #d63384;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(255, 77, 166, 0.3);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 0px;
+    }
+
+    .imgcandy {
+      max-width: 300px;
+      margin: 10px auto;
+      border-radius: 20px;
+      transition: transform 0.3s;
+    }
+
+    .imgcandy:hover {
+      transform: scale(1.05);
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: #ff4da6;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: #e04492;
+      transform: scale(1.05);
     }
 
     footer {
-      background: #ff4da6;
+      background: linear-gradient(90deg, #ff4da6, #ff80c0);
       color: white;
-      padding: 10px;
+      padding: 15px;
       margin-top: 40px;
+      font-size: 0.9rem;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -45,12 +98,19 @@
   </section>
 
   <section>
-    <img src="Paginaola.png" alt="candy" class="imgcandy">
-    <p>Olá, eu sou o Chef Android, seja bem vindo e conheça o maravilhoso site, aproveite o maximo a nossa variedade de doces</p>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <img src="Paginaola.png" alt="candy" class="imgcandy">
+      <p style="margin: 0;">Olá, eu sou o Chef Android, seja bem vindo e conheça o maravilhoso site, aproveite o maximo a nossa variedade de doces</p>
+    </div>
   </section>
-    <h1>O que desejas saber sobre o nosso site?</h1>
+
+  <h1>O que desejas saber sobre o nosso site?</h1>
   <section>
-    <a href="sobrenos.html" class="button">Sobre Nós</a> <a href="Cardapio.html" class="button">Nosso Cardapio</a> <a href="contato.html" class="button">Contato</a> <a href="ajuda.html" class="button">Ajuda</a> <a href="ajuda.html" class="button">Sobre o Desenvolvedor</a>
+    <a href="sobrenos.html" class="button">Sobre Nós</a> 
+    <a href="Cardapio.html" class="button">Nosso Cardapio</a> 
+    <a href="contato.html" class="button">Contato</a> 
+    <a href="ajuda.html" class="button">Ajuda</a> 
+    <a href="densevolvedor.html" class="button">Sobre o Desenvolvedor</a>
   </section>
 
   <footer>
