@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candy Code - Cardápio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffb6c1; /* Rosa candy */
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+    }
+
+    header img {
+      max-width: 220px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: white;
+      text-shadow: 2px 2px #d66d8f;
+      margin: 10px 0 20px;
+    }
+
+    .cardapio {
+      display: grid;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .item {
+      background: white;
+      border-radius: 20px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
+
+    .item img {
+      max-width: 150px;
+      border-radius: 15px;
+    }
+
+    .item h2 {
+      font-size: 1.8rem;
+      color: #6b122b;
+      margin: 0;
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .btn-comprar {
+      margin-top: 10px;
+      background: #ff4da6;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .btn-comprar:hover {
+      background: #e04492;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    footer img {
+      max-width: 200px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .item img {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="6.png" alt="Logo Candy Code"> <!-- Trocar pelo logo -->
+    <h1>Cardápio</h1>
+  </header>
+
+  <section class="cardapio">
+    <div class="item">
+      <img src="2.png" alt="Brownie Binário">
+      <div>
+        <h2>Brownie Binário</h2>
+        <button class="btn-comprar" onclick="comprar('Brownie Binário')">Deseja comprar?</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="3.png" alt="Cupcake Bugado">
+      <div>
+        <h2>Cupcake Bugado</h2>
+        <button class="btn-comprar" onclick="comprar('Cupcake Bugado')">Deseja comprar?</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="4.png" alt="Donut Debug">
+      <div>
+        <h2>Donut Debug</h2>
+        <button class="btn-comprar" onclick="comprar('Donut Debug')">Deseja comprar?</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="5.png" alt="Cookie Cache">
+      <div>
+        <h2>Cookie Cache</h2>
+        <button class="btn-comprar" onclick="comprar('Cookie Cache')">Deseja comprar?</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="logo.png" alt="Android Chef"> <!-- Mascote -->
+  </footer>
+
+  <script>
+    function comprar(produto) {
+      const quantidade = prompt("Quantas unidades de " + produto + " você deseja?");
+      if (quantidade && !isNaN(quantidade) && quantidade > 0) {
+        const mensagem = encodeURIComponent(
+          `Olá! Gostaria de pedir ${quantidade} unidade(s) de ${produto} pelo site Candy Code.`
+        );
+        // Substitua o número abaixo pelo seu número do WhatsApp com DDI e DDD, exemplo: 5511999999999
+        const numero = "92993361569";
+        window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+      } else if (quantidade !== null) {
+        alert("Por favor, informe uma quantidade válida.");
+      }
+    }
+  </script>
+
+</body>
+</html>

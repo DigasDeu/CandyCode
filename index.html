@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash Candy Code</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      overflow: hidden;
+      transition: opacity 1s ease;
+    }
+
+    #splash video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tela Splash -->
+  <div id="splash">
+    <video autoplay muted playsinline id="splashVideo">
+      <source src="candycode.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos em HTML5.
+    </video>
+  </div>
+
+  <script>
+    const splash = document.getElementById('splash');
+    const video = document.getElementById('splashVideo');
+
+    video.onended = () => {
+      splash.style.opacity = 0;
+      setTimeout(() => {
+        // Redireciona para o site principal
+        window.location.href = "site-principal.html"; 
+        // 👆 troque "site-principal.html" pelo nome da página principal do Candy Code
+      }, 1000);
+    };
+  </script>
+</body>
+</html>
