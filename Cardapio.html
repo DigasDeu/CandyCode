@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Candy Code - Cardápio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827cc;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --brand: #f472b6;
+      --brand-2: #22d3ee;
+      --ok: #34d399;
+      --warn: #fb923c;
+      --ring: #a78bfa;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
     body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffb6c1; /* Rosa candy */
-      text-align: center;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% 10%, #1e293b 0%, transparent 60%),
+        radial-gradient(1000px 600px at 90% 20%, #0ea5e9 0%, transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, #ec4899 0%, transparent 60%),
+        var(--bg);
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
     }
 
     header {
+      text-align: center;
       padding: 20px;
     }
 
     header img {
-      max-width: 220px;
+      max-width: 180px;
     }
 
     h1 {
-      font-size: 2.2rem;
-      color: white;
-      text-shadow: 2px 2px #d66d8f;
+      font-size: 2rem;
+      color: #fff;
       margin: 10px 0 20px;
     }
 
@@ -31,59 +62,69 @@
       display: grid;
       gap: 20px;
       padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     .item {
-      background: white;
+      background: linear-gradient(180deg, #0b1224aa, #0b122480);
+      border: 1px solid #ffffff10;
       border-radius: 20px;
       padding: 15px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
       flex-wrap: wrap;
     }
 
     .item img {
-      max-width: 150px;
+      max-width: 130px;
       border-radius: 15px;
     }
 
     .item h2 {
-      font-size: 1.8rem;
-      color: #6b122b;
+      font-size: 1.4rem;
+      color: #fff;
       margin: 0;
-      font-family: 'Brush Script MT', cursive;
+      font-weight: 600;
     }
 
-    .btn-comprar {
+    .btn-comprar,
+    .btn-voltar {
       margin-top: 10px;
-      background: #ff4da6;
-      color: white;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #0b1020;
       border: none;
-      padding: 8px 15px;
-      border-radius: 10px;
+      padding: 10px 16px;
+      border-radius: 12px;
       cursor: pointer;
       font-size: 0.9rem;
+      font-weight: 600;
       transition: 0.3s;
-      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
     }
 
-    .btn-comprar:hover {
-      background: #e04492;
+    .btn-comprar:hover,
+    .btn-voltar:hover {
       transform: scale(1.05);
+      box-shadow: 0 6px 20px #00000066;
     }
 
     footer {
       margin-top: 30px;
       padding: 20px;
+      text-align: center;
     }
 
     footer img {
-      max-width: 200px;
+      max-width: 150px;
+      margin-bottom: 15px;
     }
 
-    /* Responsivo */
     @media (max-width: 768px) {
       .item {
         flex-direction: column;
@@ -96,10 +137,11 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="6.png" alt="Logo Candy Code"> <!-- Trocar pelo logo -->
+    <img src="6.png" alt="Logo Candy Code">
     <h1>Cardápio</h1>
   </header>
 
@@ -108,7 +150,7 @@
       <img src="2.png" alt="Brownie Binário">
       <div>
         <h2>Brownie Binário</h2>
-        <button class="btn-comprar" onclick="comprar('Brownie Binário')">Deseja comprar?</button>
+        <button class="btn-comprar" onclick="comprar('Brownie Binário')">Comprar</button>
       </div>
     </div>
 
@@ -116,7 +158,7 @@
       <img src="3.png" alt="Cupcake Bugado">
       <div>
         <h2>Cupcake Bugado</h2>
-        <button class="btn-comprar" onclick="comprar('Cupcake Bugado')">Deseja comprar?</button>
+        <button class="btn-comprar" onclick="comprar('Cupcake Bugado')">Comprar</button>
       </div>
     </div>
 
@@ -124,7 +166,7 @@
       <img src="4.png" alt="Donut Debug">
       <div>
         <h2>Donut Debug</h2>
-        <button class="btn-comprar" onclick="comprar('Donut Debug')">Deseja comprar?</button>
+        <button class="btn-comprar" onclick="comprar('Donut Debug')">Comprar</button>
       </div>
     </div>
 
@@ -132,13 +174,15 @@
       <img src="5.png" alt="Cookie Cache">
       <div>
         <h2>Cookie Cache</h2>
-        <button class="btn-comprar" onclick="comprar('Cookie Cache')">Deseja comprar?</button>
+        <button class="btn-comprar" onclick="comprar('Cookie Cache')">Comprar</button>
       </div>
     </div>
   </section>
 
   <footer>
-    <img src="logo.png" alt="Android Chef"> <!-- Mascote -->
+    <img src="logo.png" alt="Android Chef">
+    <br>
+    <a href="site-principal.html" class="btn-voltar">Voltar para Home</a>
   </footer>
 
   <script>
@@ -148,7 +192,6 @@
         const mensagem = encodeURIComponent(
           `Olá! Gostaria de pedir ${quantidade} unidade(s) de ${produto} pelo site Candy Code.`
         );
-        // Substitua o número abaixo pelo seu número do WhatsApp com DDI e DDD, exemplo: 5511999999999
         const numero = "92993361569";
         window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
       } else if (quantidade !== null) {
@@ -158,4 +201,5 @@
   </script>
 
 </body>
+
 </html>
