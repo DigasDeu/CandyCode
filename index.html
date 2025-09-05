@@ -16,7 +16,7 @@
 
     #splash {
       position: fixed;
-      top: 0;
+      top: 100;
       left: 0;
       width: 100vw;
       height: 100vh;
@@ -31,17 +31,17 @@
 
     #splash video {
       position: absolute;
-      top: 50%;
+      top: 75%;
       left: 50%;
       width: 100%;
       height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;   /* Preenche a tela cortando sobras */
+      transform: translate(-75%, -50%);
+      object-fit: cover;
       object-position: center;
     }
 
     /* Ajuste para dispositivos móveis */
-    @media (max-width: 768px) {
+    @media (max-width: 668px) {
       #splash video {
         width: 100vw;
         height: 100vh;
@@ -52,7 +52,7 @@
   </style>
 </head>
 <body>
-  <!-- Tela Splash -->
+     
   <div id="splash">
     <video autoplay muted playsinline id="splashVideo">
       <source src="candycode.mp4" type="video/mp4">
