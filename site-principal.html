@@ -1,40 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Candy Code 🍭💻</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <title>Tela Mobile – Candy Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f172a;         /* slate-900 */
+      --card: #111827cc;     /* gray-900 w/ alpha */
+      --text: #e5e7eb;       /* gray-200 */
+      --muted: #94a3b8;      /* slate-400 */
+      --brand: #f472b6;      /* pink-400 */
+      --brand-2: #22d3ee;    /* cyan-400 */
+      --ok: #34d399;         /* emerald-400 */
+      --warn: #fb923c;       /* orange-400 */
+      --ring: #a78bfa;       /* violet-400 */
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% 10%, #1e293b 0%, transparent 60%),
+        radial-gradient(1000px 600px at 90% 20%, #0ea5e9 0%, transparent 55%),
+        radial-gradient(900px 600px at 50% 100%, #ec4899 0%, transparent 60%),
+        var(--bg);
+      /* Usa a altura real da viewport em celulares modernos */
+      min-height: 100dvh;
+      padding: max(env(safe-area-inset-top), 16px) max(env(safe-area-inset-right), 16px) max(env(safe-area-inset-bottom), 16px) max(env(safe-area-inset-left), 16px);
+      display: grid;
+      place-items: center;
+    }
+
+    .app{
+      width: 100%;
+      max-width: 480px; /* bom para telas de celular e pequenos tablets */
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 16px;
+    }
+
+    .topbar{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo{
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid; place-items: center; color: #0b1020; font-weight: 800;
+      box-shadow: 0 8px 30px #00000055;
+    }
+
+    .brand{
+      font-weight: 700; letter-spacing: 0.3px; font-size: 1.05rem; color: #fff;
+    }
+
+    .card{
+      background: linear-gradient(180deg, #0b1224aa, #0b122480);
+      border: 1px solid #ffffff10;
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 10px 30px #00000055;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero.card{
+      display: grid; gap: 10px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      min-height: 140px;
+    }
+
+    .hero h1{
+      margin: 6px 0 0; font-size: clamp(20px, 5vw, 28px); line-height: 1.15;
+    }
+
+    .hero p{ margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+    .chiprow{ display:flex; flex-wrap: wrap; gap: 8px; }
+
+    .chip{
+      padding: 6px 10px; border-radius: 999px; font-size: 0.8rem;
+      background: #0ea5e91a; border: 1px solid #0ea5e955;
+    }
+
+    .cta{
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;
+    }
+
+    .btn{
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 14px; border-radius: 14px; border: 1px solid #ffffff22;
+      background: linear-gradient(180deg, #111827, #0b1224);
+      color: #fff; font-weight: 600; text-decoration: none; cursor: pointer;
+      transition: transform .08s ease, box-shadow .2s ease;
+    }
+    .btn:active{ transform: translateY(1px) scale(0.99); }
+
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #0b1020;
+      border: none;
+      box-shadow: 0 10px 25px #00000055;
+    }
+
+    .list.card{ display: grid; gap: 12px; }
+
+    .item{
+      display: flex; align-items: center; gap: 12px;
+      background: #0b122440; border: 1px solid #ffffff10; border-radius: 14px; padding: 12px;
+    }
+    .item .dot{ width: 10px; height: 10px; border-radius: 50%; background: var(--ok); }
+    .item .meta{ font-size: 0.8rem; color: var(--muted); }
+
+    .navbar{
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
+    }
+
+    .tab{
+      text-align: center; padding: 10px 8px; border-radius: 14px; border: 1px solid #ffffff1a;
+      background: #0b1224b3; font-size: .85rem; color: #e2e8f0;
+    }
+
+    /* Modo claro opcional */
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f6f7fb; --text:#0f172a; --card:#ffffffcc; --muted:#475569; }
+      body{ background: var(--bg); }
+      .card{ background:#ffffffd9; }
+      .btn{ background: #f1f5f9; color:#0f172a; }
+      .btn.primary{ color:#0b1020; }
+      .tab{ background: #ffffff; }
+    }
+
+    /* Ajustes para telas maiores (opcional) */
+    @media (min-width: 600px){
+      .app{ max-width: 420px; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    Soda
-  </header>
+  <main class="app" role="application" aria-label="Candy Code">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="logo" aria-hidden="true">CC</div>
+      <div class="brand">Candy Code</div>
+    </header>
 
-  <section>
-    <h1>Bem vindo ao site</h1>
-    <img src="6.png" alt="logo" class="imglogo">
-    <p class="fonte-manuscrita">Codificando doces e transformando em variedades</p>
-  </section>
+    <!-- Hero / Destaque -->
+    <section class="hero card" aria-labelledby="title">
+      <div class="chiprow" aria-label="categorias">
+        <span class="chip">Doces Tech</span>
+        <span class="chip">Geek Vibes</span>
+        <span class="chip">Entrega Rápida</span>
+      </div>
+      <h1 id="title">Seu doce com estética tecnológica.</h1>
+      <p>Cardápio ilustrado, pedidos simples e um toque de neon. Pronto para começar?</p>
+      <div class="cta">
+        <a class="btn primary" href="#cardapio">Ver Cardápio</a>
+        <a class="btn" href="#sobre">Saiba Mais</a>
+      </div>
+    </section>
 
-  <section>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-      <img src="Paginaola.png" alt="candy" class="imgcandy">
-      <p style="margin: 0;">Olá, eu sou o Chef Android, seja bem vindo e conheça o maravilhoso site, aproveite o maximo a nossa variedade de doces</p>
-    </div>
-  </section>
+    <!-- Lista de destaques / items de exemplo -->
+    <section class="list card" id="cardapio" aria-label="itens populares">
+      <div class="item">
+        <div class="dot" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:600">Cupcake RGB</div>
+          <div class="meta">Baunilha + cobertura neon</div>
+        </div>
+        <div style="margin-left:auto; font-weight:700">R$ 7,90</div>
+      </div>
+      <div class="item">
+        <div class="dot" style="background:var(--warn)" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:600">Donut Pixel</div>
+          <div class="meta">Brigadeiro + granulado 8-bit</div>
+        </div>
+        <div style="margin-left:auto; font-weight:700">R$ 8,50</div>
+      </div>
+      <div class="item">
+        <div class="dot" style="background:var(--ring)" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:600">Milkshake API</div>
+          <div class="meta">Cookies & cream com integração de calda</div>
+        </div>
+        <div style="margin-left:auto; font-weight:700">R$ 14,90</div>
+      </div>
+    </section>
 
-  <h1>O que desejas saber sobre o nosso site?</h1>
-  <section>
-    <a href="sobrenos.html" class="button">Sobre Nós</a> 
-    <a href="Cardapio.html" class="button">Nosso Cardapio</a> 
-    <a href="contato.html" class="button">Contato</a> 
-    <a href="ajuda.html" class="button">Ajuda</a> 
-    <a href="densevolvedor.html" class="button">Sobre o Desenvolvedor</a>
-  </section>
+    <!-- Navegação inferior -->
+    <nav class="navbar" aria-label="Navegação inferior">
+      <a class="tab" href="#cardapio">Cardápio</a>
+      <a class="tab" href="#sobre">Sobre</a>
+      <a class="tab" href="#contato">Contato</a>
+    </nav>
+  </main>
 
-  <footer>
-    &copy; 2025 Candy Code. Todos os direitos reservados.
-  </footer>
+  <script>
+    // Exemplo: clique no CTA rola suave
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
 </body>
 </html>
