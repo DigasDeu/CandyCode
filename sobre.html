@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | Candy Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fef1f6, #f8d4e3);
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sobre-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 24px rgba(255, 77, 166, 0.25);
+            padding: 40px 32px;
+        }
+        .sobre-container section {
+            margin-bottom: 32px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #fff9fb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sobre-container section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(255, 77, 166, 0.3);
+        }
+        .sobre-container h1 {
+            color: #ff4da6;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 16px;
+            position: relative;
+        }
+        .sobre-container h1::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #ff4da6;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+        }
+        .sobre-container p {
+            margin: 12px 0;
+            line-height: 1.7;
+            color: #444;
+            font-size: 1.1rem;
+        }
+        .highlight {
+            background: linear-gradient(90deg, #ff4da633, transparent);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sobre-container">
+        <section>
+            <h1>Proposta de Valor</h1>
+            <p>A <span class="highlight">Candy Code</span> transforma doces em experiências únicas ao unir sabor, criatividade e tecnologia. Nossos produtos encantam crianças, jovens e adultos com doces personalizados, embalagens temáticas e uma pegada geek moderna — perfeita para quem busca sabor e diversão com um toque de inovação.</p>
+        </section>
+        <section>
+            <h1>Segmento dos Clientes</h1>
+            <p>Consumidores finais apaixonados por doces, buscando <span class="highlight">qualidade, sabor e apresentação diferenciada</span>.</p>
+            <p>Público jovem e adulto, principalmente entre 18 e 40 anos, que valoriza produtos artesanais e experiências gastronômicas.</p>
+            <p>Clientes de festas e eventos, como aniversários, casamentos e confraternizações, que buscam doces personalizados e sofisticados.</p>
+            <p>Empresas e revendedores, que desejam incluir nossos doces em cestas, brindes ou vitrines de revenda.</p>
+        </section>
+        <section>
+            <h1>Relacionamento com o Cliente</h1>
+            <p>Construímos relacionamentos duradouros com nossos clientes por meio de um <span class="highlight">atendimento personalizado e atencioso</span>.</p>
+            <p>Oferecemos canais de comunicação abertos, como redes sociais e e-mail, para ouvir feedbacks e sugestões.</p>
+            <p>Realizamos ações de fidelização, como programas de pontos e descontos exclusivos para clientes frequentes.</p>
+            <p>Buscamos sempre surpreender nossos clientes com novidades e lançamentos que atendam suas expectativas.</p>
+        </section>
+        <section>
+            <h1>Objetivo</h1>
+            <p>Nosso objetivo é proporcionar <span class="highlight">experiências únicas e memoráveis</span> por meio de nossos produtos, encantando nossos clientes e superando suas expectativas.</p>
+        </section>
+        <section>
+            <h1>Atividades Chaves</h1>
+            <p>Desenvolvimento de produtos: Criação e inovação de <span class="highlight">doces personalizados e temáticos</span>.</p>
+            <p>Marketing e vendas: Estratégias para promover nossos produtos e alcançar novos clientes.</p>
+            <p>Atendimento ao cliente: Suporte e acompanhamento para garantir a satisfação dos nossos clientes.</p>
+            <p>Logística: Gestão eficiente da produção e entrega dos produtos.</p>
+        </section>
+        <section>
+            <h1>Recursos Principais</h1>
+            <p>Ingredientes de alta qualidade: Utilizamos apenas os melhores ingredientes para garantir o <span class="highlight">sabor e a qualidade</span> dos nossos doces.</p>
+            <p>Equipe criativa: Contamos com uma equipe talentosa e apaixonada por doces, sempre em busca de novas ideias e inovações.</p>
+            <p>Infraestrutura: Possuímos uma cozinha equipada e adequada para a produção em escala dos nossos produtos.</p>
+            <p>Parcerias estratégicas: Estabelecemos parcerias com fornecedores e distribuidores para otimizar nossa cadeia de suprimentos.</p>
+        </section>
+    </div>
+    <script>
+        document.querySelectorAll('.sobre-container section').forEach(section => {
+            section.addEventListener('mouseenter', () => {
+                section.style.background = '#fff0f6';
+            });
+            section.addEventListener('mouseleave', () => {
+                section.style.background = '# lithium';
+            });
+        });
+    </script>
+</body>
+</html>

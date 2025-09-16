@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f172a;
+      --bg: #ff91e7;
       --card: #111827cc;
       --text: #e5e7eb;
       --muted: #94a3b8;
@@ -38,7 +38,7 @@
       font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
       color: var(--text);
       background:
-        radial-gradient(1200px 800px at 10% 10%, #1e293b 0%, transparent 60%),
+        radial-gradient(1200px 800px at 10% 10%, #ffffff 0%, transparent 60%),
         radial-gradient(1000px 600px at 90% 20%, #0ea5e9 0%, transparent 55%),
         radial-gradient(900px 600px at 50% 100%, #ec4899 0%, transparent 60%),
         var(--bg);
@@ -280,19 +280,30 @@
     </section>
 
     <section class="list card" id="contato" aria-label="contato">
-      <div class="item">
-        <div class="dot" style="background:var(--ring)" aria-hidden="true"></div>
-        <div>
-          <div style="font-weight:600">Contato</div>
-          <div class="meta">Fale conosco pelo WhatsApp: (92) 99336-1569</div>
+  <div class="item">
+    <div class="dot" style="background:var(--ring)" aria-hidden="true"></div>
+    <div>
+      <div style="font-weight:600">Contato</div>
+      <div class="meta">
+        Fale conosco pelas nossas redes sociais
+        <div style="display:flex; align-items:center; gap:12px; margin-top:8px;">
+          <a href="https://www.instagram.com/candycode_/">
+            <img src="ig.png" alt="Instagram" style="width:32px; height:32px;">
+          </a>
+          <a href="https://api.whatsapp.com/qr/IRK6PO47ESJ6G1?autoload=1&app_absent=0">
+            <img src="zap.png" alt="WhatsApp" style="width:32px; height:32px;">
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <nav class="navbar" aria-label="Navegação inferior">
       <a class="tab" href="Cardapio.html">Cardápio</a>
-      <a class="tab" href="#sobre">Sobre</a>
-      <a class="tab" href="#contato">Contato</a>
+      <a class="tab" href="sobre.html">Sobre</a>
+      <a class="tab" href="densevolvedor.html">densevolvedor</a>
     </nav>
   </main>
 </body>
