@@ -203,6 +203,11 @@
       color: #e2e8f0;
     }
 
+    .audio-player {
+      display: none;
+      /* Hide the audio element */
+    }
+
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #f6f7fb;
@@ -280,25 +285,31 @@
     </section>
 
     <section class="list card" id="contato" aria-label="contato">
-  <div class="item">
-    <div class="dot" style="background:var(--ring)" aria-hidden="true"></div>
-    <div>
-      <div style="font-weight:600">Contato</div>
-      <div class="meta">
-        Fale conosco pelas nossas redes sociais
-        <div style="display:flex; align-items:center; gap:12px; margin-top:8px;">
-          <a href="https://www.instagram.com/candycode_/">
-            <img src="ig.png" alt="Instagram" style="width:32px; height:32px;">
-          </a>
-          <a href="https://api.whatsapp.com/qr/IRK6PO47ESJ6G1?autoload=1&app_absent=0">
-            <img src="zap.png" alt="WhatsApp" style="width:32px; height:32px;">
-          </a>
+      <div class="item">
+        <div class="dot" style="background:var(--ring)" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:600">Contato</div>
+          <div class="meta">
+            Fale conosco pelas nossas redes sociais
+            <div style="display:flex; align-items:center; gap:12px; margin-top:8px;">
+              <a href="https://www.instagram.com/candycode_/">
+                <img src="ig.png" alt="Instagram" style="width:32px; height:32px;">
+              </a>
+              <a href="https://api.whatsapp.com/qr/IRK6PO47ESJ6G1?autoload=1&app_absent=0">
+                <img src="zap.png" alt="WhatsApp" style="width:32px; height:32px;">
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <div class="audio-player">
+      <audio autoplay loop volume="0.3">
+        <source src="Candy Crush Saga OST.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
 
     <nav class="navbar" aria-label="Navegação inferior">
       <a class="tab" href="Cardapio.html">Cardápio</a>
