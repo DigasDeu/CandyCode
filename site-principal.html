@@ -205,7 +205,26 @@
 
     .audio-player {
       display: none;
-      /* Hide the audio element */
+    }
+
+    /* 🎵 Botão flutuante */
+    .music-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #0b1020;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 6px 20px #00000055;
+      user-select: none;
     }
 
     @media (prefers-color-scheme: light) {
@@ -263,7 +282,7 @@
       <p>Cardápio ilustrado, pedidos simples e um toque de neon. Pronto para começar?</p>
       <div class="cta">
         <a class="btn primary" href="Cardapio.html">Ver Cardápio</a>
-        <a class="btn" href="#sobre">Saiba Mais</a>
+        <a class="btn" href="sobrenos.html">Saiba Mais</a>
       </div>
     </section>
 
@@ -304,10 +323,11 @@
       </div>
     </section>
 
+    <!-- 🎶 Fundo Musical -->
     <div class="audio-player">
-      <audio autoplay loop volume="0.3">
-        <source src="Candy Crush Saga OST.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+      <audio id="bg-music" autoplay loop muted>
+        <source src="Candy.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
       </audio>
     </div>
 
@@ -317,6 +337,32 @@
       <a class="tab" href="densevolvedor.html">densevolvedor</a>
     </nav>
   </main>
+
+  <!-- 🎵 Botão flutuante -->
+  <div class="music-toggle" id="music-toggle">🎵</div>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("music-toggle");
+
+    // Ativa o som no primeiro clique na página
+    document.addEventListener("click", () => {
+      audio.muted = false;
+      audio.play();
+    }, { once: true });
+
+    // Controle manual play/pause
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // evita conflito com o clique global
+      if (audio.paused) {
+        audio.play();
+        toggleBtn.textContent = "🎵";
+      } else {
+        audio.pause();
+        toggleBtn.textContent = "⏸️";
+      }
+    });
+  </script>
 </body>
 
 </html>

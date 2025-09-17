@@ -1,115 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós | Candy Code</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Sobre a Equipe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            background: linear-gradient(135deg, #fef1f6, #f8d4e3);
-            color: #333;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
-        .sobre-container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 6px 24px rgba(255, 77, 166, 0.25);
-            padding: 40px 32px;
+
+        .animate-fade-in {
+            animation: fadeInScale 0.8s ease-out forwards;
         }
-        .sobre-container section {
-            margin-bottom: 32px;
-            padding: 20px;
-            border-radius: 12px;
-            background: #fff9fb;
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .sobre-container section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 28px rgba(255, 77, 166, 0.3);
-        }
-        .sobre-container h1 {
-            color: #ff4da6;
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0 0 16px;
-            position: relative;
-        }
-        .sobre-container h1::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background: #ff4da6;
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-        }
-        .sobre-container p {
-            margin: 12px 0;
-            line-height: 1.7;
-            color: #444;
-            font-size: 1.1rem;
-        }
-        .highlight {
-            background: linear-gradient(90deg, #ff4da633, transparent);
-            padding: 2px 8px;
-            border-radius: 4px;
+
+        .social-link:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="sobre-container">
-        <section>
-            <h1>Proposta de Valor</h1>
-            <p>A <span class="highlight">Candy Code</span> transforma doces em experiências únicas ao unir sabor, criatividade e tecnologia. Nossos produtos encantam crianças, jovens e adultos com doces personalizados, embalagens temáticas e uma pegada geek moderna — perfeita para quem busca sabor e diversão com um toque de inovação.</p>
+
+<body class="bg-gradient-to-b from-gray-900 via-blue-900 to-indigo-900 text-gray-100 font-sans min-h-screen">
+
+    <!-- HEADER -->
+    <header
+        class="bg-gradient-to-r from-blue-800 via-indigo-700 to-purple-600 text-white py-16 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-geometric.png')] opacity-10">
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight animate-fade-in">Sobre a Equipe</h1>
+            <p class="mt-3 text-xl md:text-2xl opacity-90 animate-fade-in" style="animation-delay: 0.2s;">Equipe Candy
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container mx-auto px-6 py-12 space-y-10">
+
+        <!-- CARD 1 -->
+        <section class="bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 card-hover animate-fade-in"
+            style="animation-delay: 0.3s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-6 border-l-4 border-blue-400 pl-4">Stephanie
+                Beatryz</h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="flex-1">
+                    <p class="text-lg mb-4">CEO: Stephanie Soares
+                        Como Chief Executive Officer (Executiva-Chefe), ela é a líder máxima da empresa. Características
+                        específicas da função: Definição da visão estratégica e metas globais; tomada de decisões de
+                        alto nível; supervisão de todos os departamentos; representação da empresa perante stakeholders,
+                        investidores e o mercado; gestão de riscos e garantia de conformidade legal; liderança
+                        motivacional da equipe executiva.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
+                        <li class="flex items-center space-x-3"><span
+                                class="text-blue-400 text-xl">•</span><span>CEO</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="ep (2).png" alt="Stephanie Beatryz"
+                        class="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] object-cover rounded-lg">
+                </div>
+            </div>
         </section>
-        <section>
-            <h1>Segmento dos Clientes</h1>
-            <p>Consumidores finais apaixonados por doces, buscando <span class="highlight">qualidade, sabor e apresentação diferenciada</span>.</p>
-            <p>Público jovem e adulto, principalmente entre 18 e 40 anos, que valoriza produtos artesanais e experiências gastronômicas.</p>
-            <p>Clientes de festas e eventos, como aniversários, casamentos e confraternizações, que buscam doces personalizados e sofisticados.</p>
-            <p>Empresas e revendedores, que desejam incluir nossos doces em cestas, brindes ou vitrines de revenda.</p>
+
+        <!-- CARD 2 -->
+        <section class="bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 card-hover animate-fade-in"
+            style="animation-delay: 0.4s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-6 border-l-4 border-blue-400 pl-4">Diego Fernando
+            </h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="flex-1">
+                    <p class="text-lg mb-4">Chefe de Marketing e Webmaster: Diego Fernando
+                        Combina liderança em marketing com gerenciamento de site. Características específicas da função:
+                        Desenvolvimento de estratégias de marketing digital e offline; gerenciamento de campanhas
+                        publicitárias e branding; manutenção e otimização do website (como atualizações, SEO e
+                        usabilidade); análise de dados de mercado e comportamento do consumidor; coordenação de equipes
+                        criativas; integração de ferramentas web para suporte a vendas e produção.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
+                        <li class="flex items-center space-x-3"><span class="text-blue-400 text-xl">•</span><span>Chefe
+                                de Marketing e Webmaster</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="ep (3).png" alt="Membro 2"
+                        class="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] object-cover rounded-lg">
+                </div>
+            </div>
         </section>
-        <section>
-            <h1>Relacionamento com o Cliente</h1>
-            <p>Construímos relacionamentos duradouros com nossos clientes por meio de um <span class="highlight">atendimento personalizado e atencioso</span>.</p>
-            <p>Oferecemos canais de comunicação abertos, como redes sociais e e-mail, para ouvir feedbacks e sugestões.</p>
-            <p>Realizamos ações de fidelização, como programas de pontos e descontos exclusivos para clientes frequentes.</p>
-            <p>Buscamos sempre surpreender nossos clientes com novidades e lançamentos que atendam suas expectativas.</p>
+
+        <!-- CARD 3 -->
+        <section class="bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 card-hover animate-fade-in"
+            style="animation-delay: 0.5s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-6 border-l-4 border-blue-400 pl-4">Endrio Souza
+            </h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="flex-1">
+                    <p class="text-lg mb-4">Chefe de Atendimento ao Cliente: Endrio Souza
+                        Líder do suporte ao cliente. Características específicas da função: Gerenciamento de equipes de
+                        atendimento e suporte pós-venda; resolução de reclamações e problemas dos clientes;
+                        implementação de políticas de satisfação do cliente; coleta de feedback para melhorias em
+                        produtos/serviços; treinamento de equipe em comunicação e ferramentas de CRM; coordenação com
+                        vendas e produção para resolver questões operacionais. No organograma, essa posição aparece
+                        abaixo dos outros chefes, possivelmente indicando subordinação à CEO ou colaboração horizontal,
+                        mas com layout sugerindo suporte às áreas principais.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
+                        <li class="flex items-center space-x-3"><span class="text-blue-400 text-xl">•</span><span>Chefe
+                                de Atendimento ao Cliente</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="ep (4).png" alt="Membro 3"
+                        class="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] object-cover rounded-lg">
+                </div>
+            </div>
         </section>
-        <section>
-            <h1>Objetivo</h1>
-            <p>Nosso objetivo é proporcionar <span class="highlight">experiências únicas e memoráveis</span> por meio de nossos produtos, encantando nossos clientes e superando suas expectativas.</p>
+
+        <!-- CARD 4 -->
+        <section class="bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 card-hover animate-fade-in"
+            style="animation-delay: 0.6s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-6 border-l-4 border-blue-400 pl-4">Maria Sena
+            </h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="flex-1">
+                    <p class="text-lg mb-4">Chefe de Vendas: Maria Sena
+                        Responsável pelas vendas. Características específicas da função: Desenvolvimento de estratégias
+                        de vendas e metas de receita; liderança da equipe de vendedores; prospecção e negociação com
+                        clientes; análise de mercado para identificar oportunidades; gerenciamento de canais de
+                        distribuição; relatórios de desempenho de vendas; integração com marketing para campanhas
+                        conjuntas.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
+                        <li class="flex items-center space-x-3"><span class="text-blue-400 text-xl">•</span><span>Chefe
+                                de Vendas</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="ep (5).png" alt="Membro 4"
+                        class="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] object-cover rounded-lg">
+                </div>
+            </div>
         </section>
-        <section>
-            <h1>Atividades Chaves</h1>
-            <p>Desenvolvimento de produtos: Criação e inovação de <span class="highlight">doces personalizados e temáticos</span>.</p>
-            <p>Marketing e vendas: Estratégias para promover nossos produtos e alcançar novos clientes.</p>
-            <p>Atendimento ao cliente: Suporte e acompanhamento para garantir a satisfação dos nossos clientes.</p>
-            <p>Logística: Gestão eficiente da produção e entrega dos produtos.</p>
+
+        <!-- CARD 5 -->
+        <section class="bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 card-hover animate-fade-in"
+            style="animation-delay: 0.7s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-6 border-l-4 border-blue-400 pl-4">Lainy Oliveira
+            </h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="flex-1">
+                    <p class="text-lg mb-4">Chefe de Produção: Lainy Oliveira
+                        Líder da área de produção. Características específicas da função: Planejamento e controle da
+                        cadeia de produção; otimização de processos para eficiência e qualidade; gerenciamento de
+                        recursos materiais e humanos; implementação de padrões de segurança e sustentabilidade;
+                        monitoramento de prazos e custos de fabricação; coordenação com vendas e finanças para alinhar
+                        oferta à demanda.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
+                        <li class="flex items-center space-x-3"><span class="text-blue-400 text-xl">•</span><span>Chefe
+                                de Produção</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="ep (6).png" alt="Membro 5"
+                        class="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] object-cover rounded-lg">
+                </div>
+            </div>
         </section>
-        <section>
-            <h1>Recursos Principais</h1>
-            <p>Ingredientes de alta qualidade: Utilizamos apenas os melhores ingredientes para garantir o <span class="highlight">sabor e a qualidade</span> dos nossos doces.</p>
-            <p>Equipe criativa: Contamos com uma equipe talentosa e apaixonada por doces, sempre em busca de novas ideias e inovações.</p>
-            <p>Infraestrutura: Possuímos uma cozinha equipada e adequada para a produção em escala dos nossos produtos.</p>
-            <p>Parcerias estratégicas: Estabelecemos parcerias com fornecedores e distribuidores para otimizar nossa cadeia de suprimentos.</p>
+
+        <!-- CARD 6 -->
+        <section class="bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 card-hover animate-fade-in"
+            style="animation-delay: 0.8s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-6 border-l-4 border-blue-400 pl-4">Vicencia
+                Oliveira</h2>
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="flex-1">
+                    <p class="text-lg mb-4">Chefe de Finanças: Vicencia Oliveira
+                        Responsável pela área financeira. Características específicas da função: Gerenciamento de
+                        orçamentos, contabilidade e relatórios financeiros; análise de custos e receitas para otimizar
+                        lucros; planejamento fiscal e tributário; controle de fluxo de caixa e investimentos; auditorias
+                        internas; relatórios para a CEO sobre desempenho econômico. No organograma, parece haver uma
+                        linha conectando à área de Atendimento ao Cliente, sugerindo possível supervisão ou colaboração
+                        nessa frente.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
+                        <li class="flex items-center space-x-3"><span class="text-blue-400 text-xl">•</span><span>Chefe
+                                de Finanças</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="ep (1).png" alt="Membro 6"
+                        class="w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] object-cover rounded-lg">
+                </div>
+            </div>
         </section>
-    </div>
-    <script>
-        document.querySelectorAll('.sobre-container section').forEach(section => {
-            section.addEventListener('mouseenter', () => {
-                section.style.background = '#fff0f6';
-            });
-            section.addEventListener('mouseleave', () => {
-                section.style.background = '# lithium';
-            });
-        });
-    </script>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-r from-blue-800 via-indigo-700 to-purple-600 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm opacity-90">&copy; 2025 Diego Fernando. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
+
 </html>
